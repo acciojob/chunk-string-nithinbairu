@@ -1,21 +1,21 @@
 function stringChop(str, size) {
   // your code here
-	if(!str) return [];
-	let ans=[];
-	let i=0;
-	let j=0;
-	while(i<str.length){
-		let result=""
-		for(let k=0;k<size;k++,i++){
-			if(i<str.length){
-				result+=str[i]
-			}else{
-				break
-			}
-		}
-		ans[j++]=result;
-	}
-	return ans;
+  if (!str) return []; // handles null, undefined, ""
+
+  let ans = [];
+  let j = 0;
+
+  for (let i = 0; i < str.length; i += size) {
+    let result = "";
+
+    for (let k = 0; k < size && i + k < str.length; k++) {
+      result += str[i + k];
+    }
+
+    ans[j++] = result;
+  }
+
+  return ans;
 }
 
 // Do not change the code below
